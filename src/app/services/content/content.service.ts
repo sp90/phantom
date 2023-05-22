@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { take } from 'rxjs';
 
 export enum ContentType {
@@ -31,7 +30,7 @@ export class ContentService {
   constructor(private http: HttpClient) {}
 
   $singleItem(id: string) {
-    return toSignal(this.http.get(`${this.baseUrl}/${id}`).pipe(take(1)));
+    return this.http.get(`http://localhost:4001${this.baseUrl}/${id}`).pipe(take(1));
   }
 
   // $search(contentQuery: ContentQuery) {

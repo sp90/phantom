@@ -14,7 +14,8 @@
     "serve:ssr": "node dist/phantom/server/main.js",
     "ssr": "ng run phantom:server",
     "build:ssr": "ng build && ng run phantom:server",
-    "prerender": "ng run phantom:prerender"
+    "prerender": "ng run phantom:prerender",
+    "api": "node example-api/index.js"
   },
   "private": true,
   "dependencies": {
@@ -30,11 +31,7 @@
     "@angular/platform-server": "^16.0.0",
     "@angular/router": "^16.0.0",
     "@nguniversal/express-engine": "^16.0.0",
-    "dotenv": "^16.0.3",
     "express": "^4.15.2",
-    "mongodb": "^4.8.0",
-    "mongoose": "^6.5.0",
-    "ngx-isr": "^0.5.5",
     "rxjs": "~7.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
