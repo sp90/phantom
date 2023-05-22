@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+app-root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font: font('body-1');
+}

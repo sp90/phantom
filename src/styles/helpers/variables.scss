@@ -1,0 +1,120 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+/**
+ * Project variables
+ */
+$border-color-1: rgb(69, 66, 66);
+$border-color-2: rgb(125, 122, 122);
+
+/**
+ * Material related
+ */
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$mat-primary: (
+  50: #fff3e0,
+  100: #ffe0b2,
+  200: #ffcc80,
+  300: #ffb74d,
+  400: #ffa726,
+  500: #ff9800,
+  600: #fb8c00,
+  700: #f57c00,
+  800: #ef6c00,
+  900: #e65100,
+  A100: #ffd180,
+  A200: #ffab40,
+  A400: #ff9100,
+  A700: #ff6d00,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: black
+  )
+);
+
+$mat-accent: (
+  50: #eceff1,
+  100: #cfd8dc,
+  200: #b0bec5,
+  300: #90a4ae,
+  400: #78909c,
+  500: #607d8b,
+  600: #546e7a,
+  700: #455a64,
+  800: #37474f,
+  900: #263238,
+  A100: #cfd8dc,
+  A200: #b0bec5,
+  A400: #78909c,
+  A700: #455a64,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text
+  )
+);
+
+$mat-grays: mat.$grey-palette;
+$mat-warn: mat.$red-palette;
+$mat-success: mat.$green-palette;
+
+$primary: mat.define-palette($mat-primary);
+$accent: mat.define-palette($mat-accent);
+$grays: mat.define-palette($mat-grays);
+$warn: mat.define-palette($mat-warn);
+$success: mat.define-palette($mat-success);
+
+$ff: 'sans-serif';
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $ff,
+  $headline-1: mat.define-typography-level(96px, 128px, 600, $ff),
+  $headline-2: mat.define-typography-level(60px, 80px, 600, $ff),
+  $headline-3: mat.define-typography-level(48px, 64px, 600, $ff),
+  $headline-4: mat.define-typography-level(34px, 45px, 600, $ff),
+  $headline-5: mat.define-typography-level(24px, 32px, 800, $ff),
+  $subtitle-1: mat.define-typography-level(20px, 27px, 600, $ff),
+  $subtitle-2: mat.define-typography-level(16px, 21px, 600, $ff),
+  $body-1: mat.define-typography-level(13px, 19px, 600, $ff),
+  $caption: mat.define-typography-level(12px, 16px, 400, $ff),
+  $button: mat.define-typography-level(14px, 14px, 600, $ff)
+);
+
+$theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      grays: $grays,
+      warn: $warn,
+      success: $success
+    ),
+    typography: $custom-typography,
+    density: -2
+  )
+);

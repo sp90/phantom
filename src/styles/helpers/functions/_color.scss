@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@function color($type: primary, $level: 500) {
+  $colorMap: (
+    primary: $primary,
+    accent: $accent,
+    grays: $grays,
+    warn: $warn,
+    success: $success
+  );
+
+  @return mat.get-color-from-palette(map.get($colorMap, $type), $level);
+}
